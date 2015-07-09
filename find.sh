@@ -49,7 +49,8 @@ kfind(){
             if [ -d "${_file}" ]
             then
                 kfind "${_file}" "${search}"
-            else
+            elif [ -f "${_file}" ]
+            then
                 kgrep ${_file}
             fi
         done
